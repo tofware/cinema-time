@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Cinema;
+use App\Models\Room;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Room>
+ * @extends Factory<Room>
  */
 class RoomFactory extends Factory
 {
@@ -17,7 +19,8 @@ class RoomFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'cinema_id' => Cinema::factory(),
+            'number_of_seats' => fake()->numberBetween(1, 50)
         ];
     }
 }

@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Cinema;
+use App\Models\Schedule;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Schedule>
+ * @extends Factory<Schedule>
  */
 class ScheduleFactory extends Factory
 {
@@ -17,7 +19,8 @@ class ScheduleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'cinema_id' => Cinema::factory(),
+            'date' => fake()->date
         ];
     }
 }

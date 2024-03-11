@@ -2,6 +2,7 @@
 
 use App\Models\Cinema;
 use App\Models\Movie;
+use App\Models\Room;
 use App\Models\Schedule;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,6 +20,7 @@ return new class extends Migration
             $table->foreignIdFor(Cinema::class, 'cinema_id');
             $table->foreignIdFor(Movie::class, 'movie_id');
             $table->foreignIdFor(Schedule::class, 'schedule_id');
+            $table->foreignIdFor(Room::class, 'room_id');
             $table->time('hour');
         });
     }

@@ -2,10 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\Client;
+use App\Models\Reservation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Client>
+ * @extends Factory<Client>
  */
 class ClientFactory extends Factory
 {
@@ -17,7 +19,10 @@ class ClientFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'full_name' => fake()->name,
+            'email' => fake()->email,
+            'phone' => fake()->phoneNumber,
+            'reservation_id' => Reservation::factory()
         ];
     }
 }

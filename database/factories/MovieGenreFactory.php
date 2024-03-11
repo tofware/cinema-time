@@ -2,10 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Models\Genre;
+use App\Models\Movie;
+use App\Models\MovieGenre;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MovieGenre>
+ * @extends Factory<MovieGenre>
  */
 class MovieGenreFactory extends Factory
 {
@@ -17,7 +20,8 @@ class MovieGenreFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'movie_id' => Movie::factory(),
+            'genre_id' => Genre::factory()
         ];
     }
 }

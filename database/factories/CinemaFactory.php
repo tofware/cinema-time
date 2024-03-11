@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Cinema;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cinema>
+ * @extends Factory<Cinema>
  */
 class CinemaFactory extends Factory
 {
@@ -17,7 +18,7 @@ class CinemaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'location' => fake()->unique()->name
         ];
     }
 }
