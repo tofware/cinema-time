@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Reservation;
+use App\Models\Seat;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,12 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('clients', function (Blueprint $table) {
-            $table->id();
-            $table->string('full_name');
-            $table->string('email');
-            $table->string('phone');
+        Schema::create('reservation_seats', function (Blueprint $table) {
             $table->foreignIdFor(Reservation::class, 'reservation_id');
+            $table->foreignIdFor(Seat::class, 'seat_id');
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('reservation_seats');
     }
 };

@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class MovieGenre extends Model
+class ReservationSeat extends Model
 {
     use HasFactory;
 
-    public function movie(): BelongsTo
+    public function reservation(): BelongsTo
     {
-        return $this->belongsTo(Movie::class);
+        return $this->belongsTo(Reservation::class);
     }
 
-    public function genre(): BelongsTo
+    public function seat(): BelongsTo
     {
-        return $this->belongsTo(Genre::class);
+        return $this->belongsTo(Seat::class);
     }
 }
