@@ -12,6 +12,8 @@ class Reservation extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);

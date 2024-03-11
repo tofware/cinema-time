@@ -11,6 +11,8 @@ class Room extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function seats(): HasMany
     {
         return $this->hasMany(Seat::class);

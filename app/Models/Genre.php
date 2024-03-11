@@ -10,6 +10,8 @@ class Genre extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function movies(): BelongsToMany
     {
         return $this->belongsToMany(Movie::class)->using(MovieGenre::class);

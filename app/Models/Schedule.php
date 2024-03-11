@@ -11,6 +11,8 @@ class Schedule extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function scheduledMovies(): HasMany
     {
         return $this->hasMany(ScheduledMovie::class);

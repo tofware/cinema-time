@@ -10,6 +10,8 @@ class Client extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function reservations(): HasMany
     {
         return $this->hasMany(Reservation::class);

@@ -10,6 +10,8 @@ class ReservationSeat extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function reservation(): BelongsTo
     {
         return $this->belongsTo(Reservation::class);

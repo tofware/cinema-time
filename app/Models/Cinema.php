@@ -10,6 +10,8 @@ class Cinema extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function rooms(): HasMany
     {
         return $this->hasMany(Room::class);

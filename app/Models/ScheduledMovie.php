@@ -11,6 +11,8 @@ class ScheduledMovie extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function reservation(): HasMany
     {
         return $this->hasMany(Client::class);
